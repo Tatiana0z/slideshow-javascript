@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.slideshow img{
+    width: 50vw;
+    object-fit: contain;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+}
+.btns button {
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.btns button:hover {
+    background-color: rgba(100, 148, 237, 0.774);
+    border-color: cornflowerblue;
+}
+.prev_next {
+    display: flex;
+    justify-content: center;
+}
+.prev_next button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 5px;
+}

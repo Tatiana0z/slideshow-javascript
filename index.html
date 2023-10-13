@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+    <link href="app.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="slideshow">
+                <img src="img/dog3.jpg" alt="" id="imgPrimary">
+            </div>
+            <div class="btns">
+                <button onclick="btn('img/dog3.jpg', 1)" class="btnss"></button>
+                <button onclick="btn('img/cat2.jpg', 2)" class="btnss"></button>
+                <button onclick="btn('img/hamster.jpg', 3)" class="btnss"></button>
+                <button onclick="btn('img/fish1.jpg', 4)" class="btnss"></button>
+                <button onclick="btn('img/bird.jpg', 5)" class="btnss"></button>
+            </div>
+            <div class="prev_next">
+                <button onclick="addSlide(-1)">prev</button>
+                <button onclick="addSlide(1)">next</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
