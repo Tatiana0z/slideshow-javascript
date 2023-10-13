@@ -1,15 +1,19 @@
 let index = 0;
+const ip = document.getElementById("imgPrimary");
 
 function btn(src, n) {
-    const ip = document.getElementById("imgPrimary");
     index = n;
     let imgSrc = src;
     ip.src = imgSrc;
 }
 
+const btns = document.querySelectorAll(".btnss");
+const maxIndex = btns.length - 1;
+var bn1 = "";
+var img = "";
+
+
 function addSlide(n){
-    const btns = document.querySelectorAll(".btnss");
-    const maxIndex = btns.length - 1;
 
     index += n; // scaderea sau adaugarea;
 
@@ -21,8 +25,8 @@ function addSlide(n){
 
     const currentAttribute = btns[index].getAttribute("onclick");
  
-    let bn1 = currentAttribute.slice(5, -1);
-    let img = bn1.split("', ");
+    bn1 = currentAttribute.slice(5, -1);
+    img = bn1.split("', ");
 
     console.log(`index: ${index} current attribute ${currentAttribute}`);
     
@@ -30,13 +34,23 @@ function addSlide(n){
 }
 
 setInterval(
-    function addSlide(){
-        const btns = document.querySelectorAll(".btnss");
-        const currentAttribute = btns[index].getAttribute("onclick");
+    function addSlide(n){
+        n = 1;
+        index += n;
 
-        let bn1 = currentAttribute.slice(5, -1);
-        let img = bn1.split("', ");
-        btn(img[0] , index + 1);
-    }
-    , 4000
+        if( index < 0 ) {
+            index = maxIndex;
+        } else if ( index > maxIndex) {
+            index = 0;
+        }
+        const currentAttribute = btns[index].getAttribute("onclick");
+ 
+        bn1 = currentAttribute.slice(5, -1);
+        img = bn1.split("', ");
+
+        console.log(`index: ${index} current attribute ${currentAttribute}`);
+        
+        btn(img[0] , index);
+    } 
+    , 7000
 )
